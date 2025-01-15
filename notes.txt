@@ -1,0 +1,59 @@
+
+
+Census API Discovery Tool:
+https://api.census.gov/data.html
+
+FIPS Codes:
+https://www.census.gov/library/reference/code-lists/ansi.html
+
+Geography in the API:
+https://www.census.gov/data/developers/geography.html
+
+ACS 5-Year Variable Definitions (2023):
+https://api.census.gov/data/2023/acs/acs5/variables.html
+
+TIGERweb Main Page (Optional for geographic shapes):
+https://tigerweb.geo.census.gov/tigerwebmain/
+
+
+
+
+
+
+
+
+
+1. Install with pip install crawl4ai or crawl4ai[all] and run crawl4ai-setup. 
+2. Diagnose with crawl4ai-doctor 
+
+
+
+
+# FLOW DESCRIPTION:
+
+# PHASE 1: Initial URL Collection
+# 1. Set the start URL and base domain.
+# 2. Crawl the main page and save its content to data.md in the .md directory inside the root folder.
+# 3. Extract all internal links from the main page and add them to the pending_urls set.
+
+# PHASE 2: Process Each URL (Main Loop)
+# 1. While there are URLs in pending_urls:
+#    a. Take a batch of URLs for parallel processing (up to 5 at a time).
+#    b. Crawl the batch of URLs concurrently using arun_many.
+#    c. Append their content to data.md in the .md directory.
+#    d. Extract internal links from each crawled page.
+#    e. Add new internal links to pending_urls, skipping already visited links.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
